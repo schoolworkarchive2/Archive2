@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <script src="/js/timeTracker.js" defer></script>
+    <script src="/js/favicon.js"></script>
+    <script src="/js/panic.js"></script>
+    <script src="/js/autoclicker.js"></script>
+
+<title>Homework archive page 2</title>
+<link rel="icon" type="image/x-icon" href="https://w7.pngwing.com/pngs/995/582/png-transparent-google-classroom-teacher-g-suite-computer-icons-class-room-angle-text-class-thumbnail.pngd"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+     <link rel="stylesheet" href="/css/footer.css">
+  <script>
+    // Function to load total time spent and display it
+    function displayTotalTimeSpent() {
+        const totalKey = 'totalTimeSpent';
+        let totalTimeSpent = parseInt(localStorage.getItem(totalKey)) || 0;
+
+        // Function to format and display time
+        function updateDisplay() {
+            const totalHours = Math.floor(totalTimeSpent / 3600);
+            const totalMinutes = Math.floor((totalTimeSpent % 3600) / 60);
+            const totalSeconds = totalTimeSpent % 60;
+
+            const message = `
+                Total time spent on the site: ${totalHours} hours, ${totalMinutes} minutes, and ${totalSeconds} seconds.
+            `;
+            document.getElementById('timeSpent').innerHTML = message;
+        }
+
+        // Initial display
+        updateDisplay();
+
+        // Increment total time every second
+        setInterval(() => {
+            totalTimeSpent++;
+            localStorage.setItem(totalKey, totalTimeSpent);
+            updateDisplay();
+        }, 1000);
+    }
+
+    // Call the function to display time when the page loads
+    window.onload = displayTotalTimeSpent;
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X514E26P5B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X514E26P5B');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W9PKSQF8');</script>
+<!-- End Google Tag Manager -->
+
+
+</head>
+<body>
+<div class="container">
+<h1>Doge Games</h1>
+<center>
+    <a>Time Spent: </a><span id="timeSpent">Loading...</span>
+</center>
+<center><h4>Welcome to Doge gaming website part 2, Im not responible like last page says!!!
+</h4></center>
+<center><h5>Press \ to go to google if teacher is coming and go relax your brain with some Games, Also give credit to Gibbat2 for having the site's code, I forked it and tweaked it</h5></center>
+    <center> <a href="https://homeworkarchive.github.io/Archive/"> <h5>Click here to go back to first page </h5> </a></center>
+<br></br>
+<div class="search-container">
+<input type="text" style="color:white" id="searchInput" onkeyup="searchButtons()" placeholder="Search for Games...">
+</div>
+
+    </div>
+    <p id="time"></p>
+    
+<div class="button-container1">
+<button class="button"><a target="_blank" style="text-decoration:none" href="https://docs.google.com/forms/d/e/1FAIpQLSf1ck6TEwRF0TFp_HgHcKjQ7OSR5cjF70ocX3ZkotO7tx_Z1g/viewform?usp=publish-editor">Any questions about the site?</a></button>
+
+</div>
+
+<div class="button-container">
+<button class="button"><a style="text-decoration:none" href=''><img src="" alt=""> <span style="color:orange">Luke davison funny shorts (2 hours)</span></a></button>
+
+  </a>
+</button>    
+</div>
+</body>
+<body>
+<center><script type="text/javascript" src="https://counter.websiteout.com/js/7/0/0/1"></script>
+</body>  
+  <script>
+    function searchButtons() {
+        // Get the search query from the input field
+        var query = document.getElementById("searchInput").value.toLowerCase();
+
+        // Get all the buttons on the page
+        var buttons = document.getElementsByTagName("button");
+
+        // Loop through the buttons and check if their text contains the search query
+        for (var i = 0; i < buttons.length; i++) {
+            var buttonText = buttons[i].textContent.toLowerCase();
+            if (buttonText.includes(query)) {
+                buttons[i].style.display = "flex"; // Show the button
+            } else {
+                buttons[i].style.display = "none"; // Hide the button
+            }
+        }
+    }
+  </script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9PKSQF8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+ <script>
+        // Function to load time from local storage
+        function loadTimeSpent(key) {
+            const timeSpent = localStorage.getItem(key);
+            return timeSpent ? parseInt(timeSpent, 10) : 0;
+        }
+
+        // Function to format time in a human-readable way
+        function formatTime(seconds) {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const secs = seconds % 60;
+            return `${hours}h ${minutes}m ${secs}s`;
+        }
+
+        // Display and update total time spent
+        const totalKey = 'totalTimeSpent';
+        let totalTimeSpent = loadTimeSpent(totalKey);
+        
+        // Function to update the displayed time
+        function updateDisplay() {
+            document.getElementById('timeSpent').innerText = formatTime(totalTimeSpent);
+        }
+
+        // Initial display
+        updateDisplay();
+
+        // Increment total time every second
+        setInterval(() => {
+            totalTimeSpent++;
+            localStorage.setItem(totalKey, totalTimeSpent);
+            updateDisplay();
+        }, 1000);
+    </script>
+<script>
+  // Function to hide the element
+  function hideElement() {
+    var element = document.getElementById("elementToHide"); // Get the element by its ID
+    element.style.display = "none"; // Hide the element by setting its display property to "none"
+  }
+
+  // Call the hideElement function when the page finishes loading
+  window.addEventListener("load", function() {
+    hideElement();
+  });
+</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .footer-content {
+            text-align: center;
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .icon {
+            display: inline-block;
+            margin: 10px;
+            font-size: 24px; /* Adjust the size of the icon */
+            color: #333;
+        }
+
+        .icon:hover {
+            color: #007bff; /* Color change on hover */
+        }
+
+        footer {
+            padding: 20px;
+            background-color: #222;
+        }
+
+        p {
+            margin: 10px 0;
+            color: white;
+        }
+    </style>
+    <!-- Footer Section -->
+    <footer>
+        <center>
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="" class="icon" target="_blank" title="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="" class="icon" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <p></p> all rights reserved.</p>
+            </div>
+        </center>
+    </footer>
+<script>
+  // JavaScriptd
+  function openPopup() {
+    document.getElementById('popup').style.display = 'block';
+    setTimeout(closePopup, 10000); // Close after 10 seconds (10000 milliseconds)
+  }
+
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+
+  // Open the pop-up when the page loads
+  window.onload = openPopup;
+</script>
+    <script>
+        // Load settings from localStorage or set defaults
+        let panicKey = localStorage.getItem('panicKey') || '\\';
+        let redirectUrl = localStorage.getItem('redirectUrl') || 'https://www.google.com';
+
+        // Set event listener for the panic key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === panicKey) {
+                event.preventDefault();
+                window.location.href = redirectUrl;
+            }
+        });
+
+        // Settings button event listener
+        document.getElementById('settings-button').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'flex';
+            document.getElementById('keybind').value = panicKey;
+            document.getElementById('url').value = redirectUrl;
+        });
+
+        // Close button event listener
+        document.getElementById('close-button').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'none';
+        });
+
+        // Set button event listener
+        document.getElementById('set-button').addEventListener('click', function() {
+            const newKey = document.getElementById('keybind').value;
+            let newUrl = document.getElementById('url').value;
+
+            // Automatically add https:// if not present
+            if (!newUrl.startsWith('http://') && !newUrl.startsWith('https://')) {
+                newUrl = 'https://' + newUrl;
+            }
+
+            // Update panic key and URL in localStorage
+            if (newKey) {
+                panicKey = newKey;
+                localStorage.setItem('panicKey', panicKey);
+            }
+            if (newUrl) {
+                redirecqtUrl = newUrl;
+                localStorage.setItem('redirectUrl', redirectUrl);
+            }
+
+            alert(`Panic key set to: ${panicKey}\nRedirect URL set to: ${redirectUrl}`);
+            document.getElementById('modal').style.display = 'none'; // Close modal
+        });
+    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1892283558895586"
+     crossorigin="anonymous"></script>
+
+
+</html>
